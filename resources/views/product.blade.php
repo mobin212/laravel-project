@@ -14,7 +14,7 @@
               @foreach ($products as $item )
               <div class="item {{ $item['id']==1 ?'active':'' }}">
                 <img class="slider" src="{{ $item['gallery'] }}" alt="Los Angeles" style="width:100%;">
-                <div>
+                <div class="slider_text">
                     <h3>{{ $item['name'] }}</h3>
                     <p>{{ $item['descriotion'] }}</p>
                 </div>
@@ -32,6 +32,17 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+        </div>
+        <div class="trending_wrapper">
+            <h3>Trending Products</h3>
+            @foreach ($products as $item )
+            <div class="trending_item">
+              <img class="trending_image" src="{{ $item['gallery'] }}" alt="Los Angeles" style="width:100%;">
+              <div class="name">
+                  <h3>{{ $item['name'] }}</h3>
+              </div>
+            </div>
+            @endforeach
         </div>
     </div>
 @endsection
